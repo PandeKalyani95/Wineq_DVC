@@ -1,6 +1,6 @@
-# Create Env
+- Create Env
 conda create -n wineq python=3.7 -y
-# Activate Env
+- Activate Env
 conda activate wineq
 - Create req. file
 - install req. file by using following command
@@ -11,4 +11,12 @@ git init
 dvc init
 dvc add data_given/winequality.csv
 git add . && git commit -m "first commit"
-# creatr github accout for project if it is already created then simply push
+
+- creatr github accout for project if it is already created then simply push
+git remote add origin https://github.com/PandeKalyani95/Wineq_DVC.git
+git branch -M main
+git push -u origin main
+
+#### update gitub repo if we do any changes in code.
+git add . && git commit -m "update commit"
+git push -u origin main
