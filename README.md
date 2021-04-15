@@ -10,4 +10,5 @@ conda activate wineq
 git init
 dvc init
 dvc add data_given/winequality.csv
-git add .
+git add . && git commit -m "first commit"
+# creatr github accout for project if it is already created then simply push
