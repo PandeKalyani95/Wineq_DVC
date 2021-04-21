@@ -10,6 +10,7 @@ from get_data import read_params
 def split_and_savec_data(config_path):
     config = read_params(config_path)
     # get all the path form params.yaml file
+    # here we need the path for storing the train and test data
     test_data_path = config["split_data"]["test_path"]
     train_data_path = config["split_data"]["train_path"]
     raw_data_path = config["load_data"]["raw_dataset_csv"]
