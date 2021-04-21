@@ -42,3 +42,12 @@ git add . && git commit -m "update commit"
 ```bash
 git push -u origin main
 ```
+```bash
+dvc repro
+```
+- in dvc.yaml write all the stages that we done while model creation
+- after creating dvc.yaml file this command will excecute that stages
+- and create dvc.lock file this file start tracking that code whichever we write on dvc.yaml file
+if we make certain changes in any file for example in get_data.py we do some changes in code
+and after that if i run "duv repro" commad so it will sence that change
+and it will runs the same process and track the code.
