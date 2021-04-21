@@ -4,15 +4,15 @@ base:
   target_col: TARGET
 
 data_source:
-  #s3_source
-  database: data_given/winequality.csv
+  s3_source: E:/Data Science/INeuron/PROJECTS/Wineq_Sample_Project/data_given/winequality.csv
+  #database: data_given/winequality.csv
 
 load_data:
-  raw_dataset_csv: data/raw/winequality.csv
+  raw_dataset_csv: E:/Data Science/INeuron/PROJECTS/Wineq_Sample_Project/data/raw/winequality.csv
 
 split_data:
-  train_path: data/processed/train_winequality.csv
-  test_path: data/processed/test_winequality.csv
+  train_path: E:/Data Science/INeuron/PROJECTS/Wineq_Sample_Project/data/processed/train_winequality.csv
+  test_path: E:/Data Science/INeuron/PROJECTS/Wineq_Sample_Project/data/processed/test_winequality.csv
   test_size: 0.2
 
 estimators:
@@ -25,7 +25,7 @@ estimators:
 model_dir: saved_models
 
 #reports:
-#  params: report/params.json
-#  scores: report/scores.json
+#  params: E:/Data Science/INeuron/PROJECTS/Wineq_Sample_Project/report/params.json
+#  scores: E:/Data Science/INeuron/PROJECTS/Wineq_Sample_Project/report/scores.json
 #
 #webapp_model_dir: prediction_service/model/model.joblib
