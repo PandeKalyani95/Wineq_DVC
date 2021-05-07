@@ -60,4 +60,6 @@ using above commnd we can see scores and params of the model which is stored in
 
 ```dvc metrics diff```
 - it will show the old and new and change values from metrics (scores & paramms)
-- in short it will track the model params/scores
+in short it will track the model params/scores
+- "for example if i do change hyper-parameter and then i run my model 
+so using above command we can compare previous and current model after the change"
