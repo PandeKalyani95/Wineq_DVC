@@ -51,3 +51,14 @@ dvc repro
 if we make certain changes in any file for example in get_data.py we do some changes in code
 and after that if i run "dvc repro" commad so it will sence that change
 and it will runs the same process and track the code.
+
+```dvc metrics show
+```
+- as we maintion in the dvc.yaml file in metrics section
+where we gonna store scores and params of the model
+using above commnd we can see scores and params of the model which is stored in 
+"report/scores.json" & "report/params.json
+
+```dvc metrics diff```
+- it will show the old and new and change values from metrics (scores & paramms)
+- in short it will track the model params/scores

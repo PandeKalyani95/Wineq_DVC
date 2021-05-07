@@ -2,7 +2,7 @@
 # train the algo
 # save the metrices, params
 
-# import os
+import os
 import pandas as pd
 import numpy as np
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
@@ -10,8 +10,8 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 from sklearn.linear_model import ElasticNet
 from get_data import read_params
 import argparse
-# import joblib
-# import json
+import joblib
+import json
 
 
 def eval_metrics(actual, pred):
@@ -30,6 +30,7 @@ def train_and_evaluate(config_path):
     random_state =  config["base"]["random_state"]
     model_dir = config["model_dir"]
 
+    # hyper-parameters
     alpha = config["estimators"]["ElasticNet"]["params"]["alpha"]
     l1_ratio = config["estimators"]["ElasticNet"]["params"]["l1_ratio"]
 
@@ -61,6 +62,28 @@ def train_and_evaluate(config_path):
     print(" RMSE : %s" % rmse)
     print(" MAE  : %s" % mae)
     print(" R2   : %a" %r2)
+
+    # getting path from params.yaml file
+    scores_file = config["reports"]["scores"]
+    params_file = config["reports"]["params"]
+
+
+    with open(scores_file, "w") as f:
+        scores = {"rmse":rmse, "mae":mae, "r2": r2}
+        # dump data into scores_files
+        json.dump(scores, f, indent=4)
+
+    with open(params_file, "w") as f:
+        params = {"alpha":alpha, "l1_ratio":l1_ratio}
+        # dump data into params_files
+        json.dump(params, f, indent=4)
+
+    os.makedirs(model_dir, exist_ok=True)
+    model_path = os.path.join(model_dir, "model.joblib")
+
+    # dump file into model_dir
+    joblib.dump(eln, model_path)
+    print("model saved !")
 
 
 if __name__=="__main__":
