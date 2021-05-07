@@ -62,3 +62,8 @@ def index():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+# note: "model.joblib" which we stored in "/saved_models dir"
+# we will copy that model file into "/prediction_service/model" dir
+# because our "model_dir_path" which we mention in code is "/prediction_service/model" this
+
