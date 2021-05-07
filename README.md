@@ -63,3 +63,34 @@ using above commnd we can see scores and params of the model which is stored in
 in short it will track the model params/scores
 - "for example if i do change hyper-parameter and then i run my model 
 so using above command we can compare previous and current model after the change"
+
+- we install two library
+```tox and pytest```
+#### what is tox?
+- tox is a generic "virtual env" managemnt and test command line tool you can use for:
+   - checking that your package installs correctly with different Python version and interpreters
+   - running your tests in each of the environments, configuring your test tool of choice
+   - acting as a frontend to continuous integration servers, greatly reducing boilerplate and merging CI and shell-based testing
+
+```tox```
+- this command will create virtual env and checking that your package installs correctly with different Python version and interpreters as we mention
+- it will create virtual env in .tox dir
+
+```pytest -v```
+- "PyTest is a testing framework that allows users to write test codes using Python programming language. It helps you to write simple and scalable test cases for databases, 
+APIs, or UI. PyTest is mainly used for writing tests for APIs. It helps to write tests from simple unit tests to complex functional tests."
+- it will test codes
+
+```pip install -e .```
+- this install the packages which are present in your local dir
+- and it will run "setup.py" file also
+
+```pip freeze```
+- this command will shows all the packages which is present in your env
+- "setup.py" file which contain "src" pakages in src there are (get_data.py, load_data.py etc)
+
+```python setup.py sdist bdist_wheel```
+- this command will create "dist dir" in which we have "zip" file which contain all the packages and it will easy for share
+ 
+
+
