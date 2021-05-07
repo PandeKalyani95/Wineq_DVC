@@ -52,8 +52,7 @@ if we make certain changes in any file for example in get_data.py we do some cha
 and after that if i run "dvc repro" commad so it will sence that change
 and it will runs the same process and track the code.
 
-```dvc metrics show
-```
+```dvc metrics show```
 - as we maintion in the dvc.yaml file in metrics section
 where we gonna store scores and params of the model
 using above commnd we can see scores and params of the model which is stored in 
