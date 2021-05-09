@@ -103,6 +103,9 @@ def test_api_response_incorrect_range(data = input_data["incorrect_range"]):
     assert res["response"] == prediction_service.prediction.NotInRange().message
 
 # test for incorrct columns it will raise error(not in columns)
+# suppose newdataset that we enter for which have column name wrongly writter at that time
+# it will shows an error
+# suppose column name we have "fixed_acidity" but somehow it enter "fixed acidity" so it will throw an error
 def test_api_response_incorrect_col(data=input_data["incorrect_col"]):
     res = api_response(data)
     assert res["response"] == prediction_service.prediction.NotInCols().message
