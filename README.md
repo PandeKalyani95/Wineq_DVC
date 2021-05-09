@@ -128,3 +128,47 @@ note: now app is deployed successfully if we do chances in code
 and then push it into the git we don't have to so changes in anything
 - just check `github/action/"whatever we commit"` and see 
 wether it will build successfully or not
+
+## mlflow
+- once we start the mlflow server using below command it will shows link once we click on that link it will 
+redirect to server page and it will show default folder
+- run an expreriment using command `dvc repro` and refresh mlflow server and see it will create new artifats for present experimant
+- we can do some changes in model ex: if model is not performing well so we can do some changes in hyper-parameter or change algorithm
+and after that run again experiment using  `dvc repro` now again refresh mlflow server
+it will create another artifacts which contain present experiment information
+- we can compare models(experiment) which one is performing well
+
+- as many time we runs an experiemnt it will create an unique id artifats(folder which store model file)
+- as many time we run an model it will create artifacts that many times and mlflow.db sqlite database
+#### command for run the mlflow server
+
+- before run mlflow server command create an artifcats folder
+```mkdir artifacts```
+
+- mlflow server command -
+```bash
+mlflow server
+--backend-store-uri sqlite:///mlflow.db
+--default-artifact-root ./artifacts
+--host 0.0.0.0 -p 1234
+```
+- `backend-store-uri sqlite:///mlflow.db` we are telling tham so what is my backend store uri
+that means i am going to store all my data into "mlflow" database and this will create an "sqlite database" for us
+- `default-artifact-root ./artifacts` and there is default artifact root that means
+where i am going to save my artifacts(model parts/model information) which store in `artifacts` folder
+that's why we create `artifacts` dir before the mlflow server command
+- `1234` is the port no. that we 
+
+#### Note:
+- if in case above mlflow server command gives an error then use
+```bash
+mlflow server
+--backend-store-uri sqlite:///mlflow.db
+--default-artifact-root ./artifacts
+```
+- it will runs on default port
+
+```bash
+dvc repro
+```
+- it will runs experiment / model

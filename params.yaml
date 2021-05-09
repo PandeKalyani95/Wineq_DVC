@@ -19,10 +19,10 @@ estimators:
   ElasticNet:
     params:
 
-#      alpha: 0.9
-#      l1_ratio: 0.4
-       alpha: 0.88
-       l1_ratio: 0.89
+      alpha: 0.9
+      l1_ratio: 0.4
+#       alpha: 0.88
+#       l1_ratio: 0.89
 model_dir: E:/Data Science/INeuron/PROJECTS/Wineq_Sample_Project/saved_models
 
 reports:
@@ -30,3 +30,11 @@ reports:
   scores: E:/Data Science/INeuron/PROJECTS/Wineq_Sample_Project/report/scores.json
 
 webapp_model_dir: prediction_service/model/model.joblib
+
+# for mlflow
+mlflow_config:
+  artifacts_dir: artifacts
+  experiment_name: ElasticNet regression
+  run_name: mlops
+  registered_model_name: ElasticNetWineModel
+  remote_server_uri: http://127.0.0.1:5000
