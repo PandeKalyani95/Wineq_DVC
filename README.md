@@ -122,3 +122,9 @@ python setup.py sdist bdist_wheel
 - so in this case we set a `min` and `max` value so model will perform correctly
 - form our data set we take `min` and `max` values for the perticular `features` and store that min and max values in `schema_in.json` file.
 - and using this `schema_in.json` file if feature value are outof the range then we will rise an `customized error(NotInRange)` which is present in `tests/test_config.py`
+- we need only indenpendent variables in `schema_in.json` file
+
+note: now app is deployed successfully if we do chances in code
+and then push it into the git we don't have to so changes in anything
+- just check `github/action/"whatever we commit"` and see 
+wether it will build successfully or not
