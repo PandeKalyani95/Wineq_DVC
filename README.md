@@ -178,6 +178,4 @@ if we want to perform action in main-mlfow brance we have to do changes in `ci-c
 
 
 ### App Link for mlflow
-```bash
-https://wineqwithmlpos.herokuapp.com/
-```
+[App link](https://wineqwithmlpos.herokuapp.com/)
