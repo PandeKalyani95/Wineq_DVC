@@ -88,7 +88,7 @@ tox
 ```bash 
 tox -r
 ```
-- for reload `tox.ini`
+- for reload `tox.ini` and for reload the complete experiment
 
 ```bash
 pytest -v
