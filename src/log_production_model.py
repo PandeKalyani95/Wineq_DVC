@@ -13,6 +13,10 @@ from src.get_data import read_params
 import argparse
 import mlflow
 from mlflow.tracking import MlflowClient
+
+# if we want to print something in specific way so we use pprint()
+# The pprint module provides a capability to “pretty-print” arbitrary Python
+# data structures in a form which can be used as input to the interpreter.
 from pprint import pprint
 import joblib
 import os
