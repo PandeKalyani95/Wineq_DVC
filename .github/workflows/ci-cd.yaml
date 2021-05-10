@@ -1,12 +1,16 @@
 name: Python application
-
+# as we maintion `on` block "main" branch as
+# if we want to perform git action on main-mlflow branch
+# so replace main with main-mlflow
 on:
   push:
     branches:
-    - main
+    #- main
+    - main-mlflow
   pull_request:
     branches:
-    - main
+    #- main
+    - main-mlflow
 
 jobs:
   build:
@@ -39,7 +43,7 @@ jobs:
       env:
         HEROKU_API_TOKEN: ${{ secrets.HEROKU_API_TOKEN }}
         HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
-      if: github.ref == 'refs/heads/main' && job.status == 'success'
+      if: github.ref == 'refs/heads/main-mlflow' && job.status == 'success'
       run: |
         git remote add heroku https://heroku:$HEROKU_API_TOKEN@git.heroku.com/$HEROKU_APP_NAME.git
         git push heroku HEAD:main -f

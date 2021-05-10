@@ -162,9 +162,7 @@ that's why we create `artifacts` dir before the mlflow server command
 #### Note:
 - if in case above mlflow server command gives an error then use
 ```bash
-mlflow server
---backend-store-uri sqlite:///mlflow.db
---default-artifact-root ./artifacts
+mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./artifacts
 ```
 - it will runs on default port
 
@@ -172,3 +170,8 @@ mlflow server
 dvc repro
 ```
 - it will runs experiment / model
+
+#### git Action
+once we push all the code into the github `main-mlflow` branch so it will not performing 
+action in git because in `ci-cd.yaml` file which is in(/.github/workflows/ci-cd.yaml) we maintion `main` branch so it will search for main brance
+if we want to perform action in main-mlfow brance we have to do changes in `ci-cd.yaml` file
