@@ -153,5 +153,5 @@ dvc repro
 ### App Link 
 [App link](https://wineqwithmlpos.herokuapp.com/)
 
-### Wine Quality Project with MLOps present in `main` branch
+### Wine Quality Project Using MLOps present in `main` branch
 [main branch link](https://github.com/PandeKalyani95/Wineq_DVC/blob/main/README.md)
